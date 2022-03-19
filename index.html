@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+ </head>
+ <style>
+  #v {
+    text-align: right
+  }
+ </style>
+ <body>
+  <canvas id="canvas" width="825" height="600"></canvas>
+  <p id = "jsTime"></p>
+  <p id = "frameTime"></p>
+  -<input type = "range" id = "radiusSlider" min =" 0" max = "100" step = "10"/>+
+  <p>Radius is <span id = "radius"></span></p>
+  <div id = "v">
+  -<input type = "range" id = "vxSlider" min =" 0" max = "100" step = "10" istyle="text-align:right"/>+
+  <p>vx is <span id = "vx"></span></p>
+  </div>
+
+  <div>
+  <input type = "button" id = "start" value = "start" onclick = "startAnime()"/>
+  <input type = "button" id = "str" value = "reset" onclick = "resetAnime()"/>
+  <!--input type = "button" id = "color" value = "color" onclick = "colorChange()"/-->
+  </div>
+  <form name = "colorForm"></form>
+  <input type="radio" name="color" value= "red" id = "colorRadioR" onchange = "colorChange(this.value)" checked> Red 
+  <input type="radio" name="color" value = "green" id = "colorRadioG" onchange = "colorChange(this.value)"> Green
+  <input type="radio" name="color" value = "blue" id = "colorRadioB" onchange = "colorChange(this.value)"> Blue
+  </form>
+  <script type="text/javascript" src="simpleBouncingBall.js"></script>
+ </body>
+</html>
+
