@@ -27,7 +27,7 @@ class Particle {
     this.y  += this.vy 
     
 
-    console.log(`y: ${this.y} radius: ${this.r}`)
+    //console.log(`y: ${this.y} radius: ${this.r}`)
 
     if(this.y - this.r < 0){
       this.vx *= 0.7
@@ -38,13 +38,13 @@ class Particle {
   }
 }
 
-const initialX  = 100 
-const initialY  = 100 
-const initialVX = 3
-const initialVY = 10
-const radius    = 20
-const g         = -0.2
-const color = "#66FF66"
+const initialX      = 100 
+const initialY      = 100 
+let   initialVX     = 3
+let   initialVY     = 10
+let   radius = 20
+let   g      = -0.2
+const color         = "#66FF66"
 
 const particle = new Particle(initialX, initialY, initialVX, initialVY, radius, g, color)
 
@@ -52,13 +52,45 @@ function radiusChange(event){
   particle.r = Number(radiusSliderElem.value)
   console.log(`radius: ${typeof particle.r}`)
   console.log(particle.r)
-  sliderValueElm.innerText = radiusSliderElem.value
+  radiusSliderValueElm.innerText = radiusSliderElem.value
 }
 
-const radiusSliderElem = document.getElementById('radiusSlider') 
-const sliderValueElm   = document.getElementById('radius') 
-sliderValueElm.innerText = particle.r
+const radiusSliderElem         = document.getElementById('radiusSlider') 
+const radiusSliderValueElm     = document.getElementById('radius') 
+radiusSliderValueElm.innerText = particle.r
 radiusSliderElem.addEventListener('input', radiusChange)
+
+function vxChange(event){
+  initialVX = Number(vxSliderElem.value)
+  vxSliderValueElm.innerText = vxSliderElem.value
+}
+
+const vxSliderElem         = document.getElementById('vxSlider') 
+const vxSliderValueElm     = document.getElementById('vx') 
+vxSliderValueElm.innerText = particle.vx
+vxSliderElem.addEventListener('input', vxChange)
+
+
+function vyChange(event){
+  initialVY = Number(vySliderElem.value)
+  vySliderValueElm.innerText = vySliderElem.value
+}
+
+const vySliderElem         = document.getElementById('vySlider') 
+const vySliderValueElm     = document.getElementById('vy') 
+vySliderValueElm.innerText = particle.vy
+vySliderElem.addEventListener('input', vyChange)
+
+function gChange(event){
+  particle.g = Number(gSliderElem.value)
+  console.log(particle.g)
+  gSliderValueElm.innerText = gSliderElem.value
+}
+
+const gSliderElem         = document.getElementById('gSlider') 
+const gSliderValueElm     = document.getElementById('g') 
+gSliderValueElm.innerText = particle.g
+gSliderElem.addEventListener('input', gChange)
 
 function render() {
   particle.update()
