@@ -42,8 +42,8 @@ const initialX      = 100
 const initialY      = 100 
 let   initialVX     = 3
 let   initialVY     = 10
-let   radius = 20
-let   g      = -0.2
+let   radius        = 20
+let   g             = -0.2
 const color         = "#66FF66"
 
 const particle = new Particle(initialX, initialY, initialVX, initialVY, radius, g, color)
@@ -109,7 +109,11 @@ function resetAnime(){
   particle.vy = initialVY
 }
 
+
 function colorChange(val){
-  console.log(val)
   particle.color = val
 }
+
+const redRadioElm = document.getElementById("colorRadioR")
+particle.color = redRadioElm.value
+
