@@ -11,30 +11,41 @@
  </style>
  <body>
   <canvas id="canvas" width="825" height="600"></canvas>
-  <p id = "jsTime"></p>
-  <p id = "frameTime"></p>
-  -<input type = "range" id = "radiusSlider" min =" 0" max = "100" step = "10"/>+
-  <p>Radius is <span id = "radius"></span></p>
-  <div id = "v">
+  <!--p id = "jsTime"></p-->
+  <!--p id = "frameTime"></p-->
+  <!--input type = "range" id = "radiusSlider" min =" 0" max = "100" step = "10"/>+
+  <!--p>Radius is <span id = "radius"></span></p-->
+
+  <!--div id = "v">
   -<input type = "range" id = "vxSlider" min =" 0" max = "10" step = "1" style="text-align:right"/>+
   <p>vx is <span id = "vx"></span></p>
   -<input type = "range" id = "vySlider" min =" 0" max = "10" step = "1" style="text-align:right"/>+
   <p>vy is <span id = "vy"></span></p>
   -<input type = "range" id = "gSlider" min ="-1" max = "-0.1" step = "0.1" style="text-align:right"/>+
   <p>g is <span id = "g"></span></p>
-  </div>
-
+  </div-->
+  <p>
+  <input type = "text" id = "msg">
+  <input type = "button" value = "GO" id = "goButton">
+  </p>
   <div>
   <input type = "button" id = "start" value = "start" onclick = "startAnime()"/>
   <input type = "button" id = "str" value = "reset" onclick = "resetAnime()"/>
-  <!--input type = "button" id = "color" value = "color" onclick = "colorChange()"/-->
+  <input type = "button" id = "color" value = "color" onclick = "colorChange()"/>
   </div>
+
+  <form>  
+  <input type="radio" name = "draw" id = "Ball" onchange = "drawBouncingParticle()" > Ball 
+  <input type="radio" name = "draw" id = "Character" onchange = "drawBouncingText()" > Text 
+  </form>
+  
   <form name = "colorForm"></form>
   <input type="radio" name="color" value= "red" id = "colorRadioR" onchange = "colorChange(this.value)" checked> Red 
   <input type="radio" name="color" value = "green" id = "colorRadioG" onchange = "colorChange(this.value)"> Green
   <input type="radio" name="color" value = "blue" id = "colorRadioB" onchange = "colorChange(this.value)"> Blue
   </form>
-  <script type="text/javascript" src="simpleBouncingBall.js"></script>
+
+  <script type="text/javascript" src="textAnimation.js"></script>
  </body>
 </html>
 

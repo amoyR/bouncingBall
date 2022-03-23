@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas")
 const ctx    = canvas.getContext("2d")
-ctx.translate(0, canvas.height)
-ctx.scale(1, -1)
+//ctx.translate(0, canvas.height)
+//ctx.scale(1, -1)
 
 class Particle {
   constructor(x, y, vx, vy, r, g, color) {
@@ -26,13 +26,10 @@ class Particle {
     this.vy += this.g
     this.y  += this.vy 
     
-
-    //console.log(`y: ${this.y} radius: ${this.r}`)
-
-    if(this.y - this.r < 0){
+    if(this.y + this.r > canvas.height){
       this.vx *= 0.7
       this.vy *= -0.7
-      this.y   = this.r
+      this.y   = canvas.height - this.r
     }
     this.render()
   }
@@ -41,9 +38,9 @@ class Particle {
 const initialX      = 100 
 const initialY      = 100 
 let   initialVX     = 3
-let   initialVY     = 10
+let   initialVY     = -5
 let   radius        = 20
-let   g             = -0.2
+let   g             = 0.2
 const color         = "#66FF66"
 
 const particle = new Particle(initialX, initialY, initialVX, initialVY, radius, g, color)
@@ -96,6 +93,7 @@ function render() {
   particle.update()
   window.requestAnimationFrame(render)
 }
+render()
 
 function startAnime(){
   document.getElementById("start").disabled = true
