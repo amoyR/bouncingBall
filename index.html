@@ -30,21 +30,22 @@
   </p-->
   <div>
   <input type = "button" id = "start" value = "start" onclick = "startAnimation()"/>
-  <input type = "button" id = "str" value = "reset" onclick = "resetAnimation()"/>
+  <!--input type = "button" id = "str" value = "reset" onclick = "resetAnimation()"/-->
   <!--input type = "button" id = "color" value = "color" onclick = "colorChange()"/-->
   </div>
 
   <form id = "objectType">  
-  <input type="radio" name = "draw" id = "Ball" value = "ball" onchange = "objectStatus()" checked> Ball 
-  <input type="radio" name = "draw" id = "Character" value = "text" onchange = "objectStatus()"> Text 
+  <input type="radio" name = "draw" id = "Ball" value = "ball" onchange = "setAnimationTarget()" checked> Ball 
+  <input type="radio" name = "draw" id = "Triangle" value = "triangle" onchange = "setAnimationTarget()" > Triangle 
+  <input type="radio" name = "draw" id = "Rectangle" value = "rectangle" onchange = "setAnimationTarget()" > Rectangle
+  <input type="radio" name = "draw" id = "Character" value = "text" onchange = "setAnimationTarget()" > Text 
+  <input type="radio" name = "draw" id = "Picture" value = "picture" onchange = "setAnimationTarget()"> Picture 
   </form>
 
-  <form id = "colorType">  
-  <input type="radio" name="color" value= "red" id = "colorRadioR" onchange = "objectStatus()"  > Red 
-  <input type="radio" name="color" value = "green" id = "colorRadioG" onchange = "objectStatus()" checked> Green
-  <input type="radio" name="color" value = "blue" id = "colorRadioB" onchange = "objectStatus()"> Blue
+  <form id = "colorType">    <input type="radio" name="color" value= "red" id = "colorRadioR" onchange = "setAnimationTarget()" checked> Red 
+  <input type="radio" name="color" value = "green" id = "colorRadioG" onchange = "setAnimationTarget()" > Green
+  <input type="radio" name="color" value = "blue" id = "colorRadioB" onchange = "setAnimationTarget()"> Blue
   </form>
-  
   
 
   <script type="text/javascript" src="textAnimation.js"></script>
