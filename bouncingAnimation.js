@@ -132,7 +132,7 @@ class Picture {
     this.img.addEventListener('load', ()=> {
       dum.complete = true
     }, false)
-    this.img.src = "/img/test.jpeg"
+    this.img.src = "img/test.jpeg"
   }
 
   isColliding(y) {
